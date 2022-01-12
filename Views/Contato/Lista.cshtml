@@ -1,0 +1,33 @@
+@model List<Contato>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Necessidade</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+
+    @foreach (Contato u in Model)
+    {
+        <tr>
+            <td>@u.Id</td>
+            <td>@u.Nome</td>
+            <td>@u.Telefone</td>
+            <td>@u.Email</td>
+            <td>@u.Necessidade</td>
+            <td>@u.Data</td>
+            <td>
+                <a href="/Contato/Editar?Id=@u.Id">Editar</a>
+                <a href="/Contato/Remover?Id=@u.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+</table>

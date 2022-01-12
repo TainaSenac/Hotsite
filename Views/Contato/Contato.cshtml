@@ -1,0 +1,56 @@
+@model Contato
+@{
+    ViewData["Title"] = "Contato";
+}
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+
+</head>
+<br>
+
+<body>
+
+    <div class="text-center">
+        <h1 id="titulo">Fale conosco</h1>
+        <p id="subtitulo">Gostaria de nos comunicar algo?</p>
+        <br>
+    </div>
+<br>
+
+<form method="POST" asp-action="Contato">
+    <div class="campo">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Nome" placeholder="digite seu nome" required="required" name="Nome" id="nome">
+    </div>
+
+    <div class="campo">
+        <label for="telefone">Telefone</label>
+        <input type="phone" asp-for="Telefone" placeholder="(XX)XXXX-XXXX" required="required" name="Telefone" id="telefone">
+    </div>
+    
+    <div class="campo">
+        <label for="email">Email</label>
+        <input type="text" asp-for="Email" placeholder="pablo@gmail.com" required="required" name="Email" id="email">
+    </div>
+
+    <div class="campo">
+        <label for="necessidades">Necessidade</label>
+        <textarea cols="40" placeholder="qual sua necessidade?" name="Necessidade" id="necessidades"></textarea>
+    </div>
+    
+    <div class="campo">
+        <label for="data">Data</label>
+        <input type="date" required="required" name="Data" id="data">
+    </div>
+
+        <button class="botao" type="submit" onsubmit="">Enviar</button>
+        
+</form>
+</body>
+
+<p>
+    @ViewBag.Mensagem
+</p>

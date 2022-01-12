@@ -1,0 +1,31 @@
+@model Contato
+@{
+    ViewData ["Title"] = "Editar";
+}
+<h1>Editar</h1>
+
+<form method="POST" asp-action="Contato">
+    <p>
+        <label>Nome</label>
+        <input type="text" asp-for="Nome" placeholder="digite seu nome" required="required" name="Nome">
+    </p>
+    <p>
+        <label>Telefone</label>
+        <input type="phone" asp-for="Telefone" placeholder="(XX)XXXX-XXXX" required="required" name="Telefone">
+    </p>
+    <p>
+        <label>Email</label>
+        <input type="text" asp-for="Email" placeholder="pablo@gmail.com" required="required" name="Email">
+    </p>
+    <p>
+        <label>Necessidade</label>
+        <textarea cols="40" placeholder="qual sua necessidade?" name="Necessidade"></textarea>
+    </p>
+    <p>
+        <label>Data</label>
+        <input type="date" required="required" name="Data">
+
+    <p>
+        <input type="submit" value="Enviar">
+    </p>
+</form>
